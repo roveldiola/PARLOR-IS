@@ -31,13 +31,13 @@ include('connector.php');
 			<input type="text" name="last_name" placeholder="Enter Name" value="<?php echo $last_name; ?>" required>
 		</div>
 		<div>
-			<label>Job Number: </label>
+			<label>Employee Job: </label>
 			<select name="job_number">
 			<?php
 				if(mysqli_num_rows($result)){
 					while($row = mysqli_fetch_array($result)){
 			?>
-			<option value="<?php echo $row['job_number']; ?>"><?php echo $row['employee_job']; ?></option>
+			<option value="<?php echo $row['job_number']; ?>" ><?php echo $row['employee_job']; ?></option>
 			<?php
 					}
 				}
@@ -45,7 +45,9 @@ include('connector.php');
 			</select>
 		</div><br>
 		<button type="submit" name="saveEmp">Save</button>
-		<button type="button"> <a href="Vemployee.php">View Employee</a></button>
+		<button type="button"> <a href="Vemployee.php">View Employee</a></button><br><br>
+		<button type="button"> <a href="Cjob.php">Create Job</a></button>
+		<button type="button"> <a href="Vjob.php">View Job</a></button>
 	</form>
 
 </body>

@@ -15,6 +15,7 @@
 	<title>Parlor IS</title>
 </head>
 <body>
+<h1>Job</h1>
 	<form action="Vjob.php" method="post">
 	<div>
 		<label>Job Number: </label><br>

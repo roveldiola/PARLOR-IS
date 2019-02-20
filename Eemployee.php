@@ -17,10 +17,10 @@ include ('connector.php');
 
 </head>
 <body>
-<h2>Employee</h2>
+<h1>Employee</h1>
 	<form action = "Vemployee.php" method = "post">
 		<?php 
-			if(mysqli_num_rows($result1)){
+			if(mysqli_num_rows($result1)) {
 				while($row1 = mysqli_fetch_array($result1)) {
 		?>
 		<div>
@@ -41,18 +41,18 @@ include ('connector.php');
 		</div>
 		<div>
 			<label>Job Number: </label><br>
-			<select name="job_number" value="<?php echo $row1['job']; ?>">
+			<select name="job_number">
 			<?php
-				if(mysqli_num_rows($result)){
-					while($row = mysqli_fetch_array($result)){
-			?>
-			<option value="<?php echo $row['job_number']; ?>" selected><?php echo $row['employee_job']; ?></option>
-			<?php
-						}
+			if(mysqli_num_rows($result)){
+				while($row = mysqli_fetch_array($result)){
+		?>
+		<option value="<?php echo $row['job_number'];?>" selected><?php echo $row['employee_job']; ?></option>
+		<?php
 					}
 				}
 			}
-				?>
+		}
+			?>
 			</select>
 		</div><br>
 		<div>

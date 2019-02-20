@@ -50,11 +50,7 @@ $job_number = "";
     $sql  = "INSERT INTO employee (employee_number, first_name, middle_initial, last_name, job_number) 
     	VALUES ('$employee_number', '$first_name', '$middle_initial', '$last_name', '$job_number')";
     $result = mysqli_query($db, $sql);
-    if($result == true){
-      header('location: Vemployee.php');
-    }else{
-      echo "Somthing went wrong";
-    }
+    header('location: Vemployee.php');
   }
 
   // update data from Table 'employee'
@@ -89,7 +85,7 @@ $time_stamp = "";
     header('location: Vsalary.php');
   }
 
-  // update data from Table 'alary'
+  // update data from Table 'salary'
   if (isset($_POST['updateSal'])) {
     $employee_number = mysqli_real_escape_string($db, $_POST['employee_number']);
     $salary_emp = mysqli_real_escape_string($db, $_POST['salary_emp']);

@@ -17,8 +17,8 @@ include ('connector.php');
 	<table>
 		<thead>
 			<tr>
-				<th>Job Number </th>
-				<th>Employee Job </th>
+				<th>Job Number</th>
+				<th>Employee Job</th>
 				<th>Action</th>
 			</tr>
 		</thead>
@@ -37,8 +37,9 @@ include ('connector.php');
 	</table>
 	<br><br>
 		<div>
-			<button type="button"> <a href="Cjob.php">Add</a></button>
+			<button type="button"> <a href="Cjob.php">Add Job</a></button><br><br>
 			<button type="button"> <a href="Cemployee.php">Create Employee</a></button>
+			<button type="button"> <a href="Vemployee.php">View Employee</a></button>
 		</div>
 
 </body>

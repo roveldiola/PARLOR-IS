@@ -1,9 +1,8 @@
 <?php 
 include('connector.php');
 	
-	$query = "SELECT * FROM employee";
+	$query = "SELECT * FROM employee, job WHERE employee.job_number = job.job_number";
 	$result	= mysqli_query($db, $query);
-	
 ?>
 <!DOCTYPE html>
 <html>
@@ -12,16 +11,16 @@ include('connector.php');
 </head>
 <body>
 	<div>
-		<h2>Employee</h2>
+		<h1>Employee</h1>
 		<table>
 			<tbody>
 				<tr>
-					<td>Employee Number</td>
-					<td>First Name</td>
-					<td>Middle Initial</td>
-					<td>Last Name</td>
-					<td>Job Number</td>
-					<td>Action</td>
+					<th>Employee Number </th>
+					<th>First Name </th>
+					<th>Middle Initial </th>
+					<th>Last Name </th>
+					<th>Employee Job </th>
+					<th>Action</td>
 				</tr>
 			<?php 
 				if(mysqli_num_rows($result)>0){
@@ -32,7 +31,7 @@ include('connector.php');
 					<td><?php echo $row['first_name']; ?></td>
 					<td><?php echo $row['middle_initial']; ?></td>
 					<td><?php echo $row['last_name']; ?></td>
-					<td><?php echo $row['job_number']; ?></td>
+					<td><?php echo $row['employee_job']; ?></td>
 					<td>
 			    		<button type="submit"> <a href="Eemployee.php?id=<?php echo $row['employee_number']; ?>">Edit</a></button>
 						<button type="submit"> <a href="Demployee.php?id=<?php echo $row['employee_number']; ?>">Delete</a></button>
@@ -46,8 +45,9 @@ include('connector.php');
 	</div>
 	<br><br>
 		<div>
-			<button type="button"> <a href="Cemployee.php">Add</a></button>
+			<button type="button"> <a href="Cemployee.php">Add Employee</a></button><br><br>
 			<button type="button"> <a href="Cjob.php">Create Job</a></button>
+			<button type="button"> <a href="Vjob.php">View Job</a></button>
 		</div>
 
 </body>
