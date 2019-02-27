@@ -50,7 +50,10 @@ $job_number = "";
     $sql  = "INSERT INTO employee (employee_number, first_name, middle_initial, last_name, job_number) 
     	VALUES ('$employee_number', '$first_name', '$middle_initial', '$last_name', '$job_number')";
     $result = mysqli_query($db, $sql);
-    header('location: Vemployee.php');
+    if($result == true) {
+      header('location: Vemployee.php');
+    }
+    
   }
 
   // update data from Table 'employee'
@@ -64,35 +67,41 @@ $job_number = "";
     $sql = "UPDATE employee SET employee_number='$employee_number', first_name='$first_name', middle_initial='$middle_initial', last_name='$last_name', job_number='$job_number'
       WHERE employee_number='$employee_number'";
     mysqli_query($db, $sql);
-    header('location: Vemployee.php');
+    $result = mysqli_query($db, $sql);
+    if($result == true) {
+      header('location: Vemployee.php');
+    }
   }
 
 
 // initializing variables
+$salary_id = "";
 $employee_number = "";
 $salary_emp = "";
 $time_stamp = "";
 
   // insert to Table 'salary'
   if (isset($_POST['saveSal'])) {
+    $salary_id = mysqli_real_escape_string($db, $_POST['salary_id']);
     $employee_number = mysqli_real_escape_string($db, $_POST['employee_number']);
     $salary_emp = mysqli_real_escape_string($db, $_POST['salary_emp']);
     $time_stamp = mysqli_real_escape_string($db, $_POST['time_stamp']);
 
-    $sql = "INSERT INTO salary (employee_number, salary_emp, time_stamp) 
-      VALUES ('$employee_number', '$salary_emp', '$time_stamp')";
+    $sql = "INSERT INTO salary (employee_number, salary_emp) 
+      VALUES ('$employee_number', '$salary_emp')";
     mysqli_query($db, $sql);
     header('location: Vsalary.php');
   }
 
   // update data from Table 'salary'
   if (isset($_POST['updateSal'])) {
+    $salary_id = mysqli_real_escape_string($db, $_POST['salary_id']);
     $employee_number = mysqli_real_escape_string($db, $_POST['employee_number']);
     $salary_emp = mysqli_real_escape_string($db, $_POST['salary_emp']);
     $time_stamp = mysqli_real_escape_string($db, $_POST['time_stamp']);
 
-    $sql = "UPDATE salary SET employee_number='$employee_number', salary_emp='$salary_emp', time_stamp='$time_stamp'
-      WHERE employee_number='$employee_number'";
+    $sql = "UPDATE salary SET  salary_emp='$salary_emp'
+      WHERE salary_id='$salary_id'";
     mysqli_query($db, $sql);
     header('location: Vsalary.php');
   }

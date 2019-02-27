@@ -3,6 +3,7 @@ include('connector.php');
 	
 	$query = "SELECT * FROM employee, job WHERE employee.job_number = job.job_number";
 	$result	= mysqli_query($db, $query);
+	
 ?>
 <!DOCTYPE html>
 <html>
@@ -45,9 +46,17 @@ include('connector.php');
 	</div>
 	<br><br>
 		<div>
-			<button type="button"> <a href="Cemployee.php">Add Employee</a></button><br><br>
-			<button type="button"> <a href="Cjob.php">Create Job</a></button>
-			<button type="button"> <a href="Vjob.php">View Job</a></button>
+			<button type="submit"> <a href="Cemployee.php">Add Employee</a></button><br><br>
+		</div>
+		<h4>Job</h4>
+		<div>
+			<button type="submit"> <a href="Cjob.php">Create Job</a></button>
+			<button type="submit"> <a href="Vjob.php">View Job</a></button>
+		</div>
+		<h4>Salary</h4>
+		<div>
+			<button type="submit"> <a href="Csalary.php">Create Salary</a></button>
+			<button type="submit"> <a href="Vsalary.php">View Salary</a></button>
 		</div>
 
 </body>

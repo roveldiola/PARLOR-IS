@@ -3,6 +3,7 @@ include('connector.php');
 	
 	$query = "SELECT * FROM employee, salary WHERE employee.employee_number = salary.employee_number";
 	$result	= mysqli_query($db, $query);
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -15,6 +16,7 @@ include('connector.php');
 		<table>
 			<tbody>
 				<tr>
+					<th>Salary ID</th>
 					<th>Employee Name </th>
 					<th>Salary </th>
 					<th>Time Stamp </th>
@@ -25,12 +27,13 @@ include('connector.php');
 					while($row = mysqli_fetch_array($result)){
 			?>
 				<tr>
+					<td><?php echo $row['salary_id']; ?></td>
 					<td><?php echo $row['first_name']; ?></td>
 					<td><?php echo $row['salary_emp']; ?></td>
 					<td><?php echo $row['time_stamp']; ?></td>
 					<td>
-			    		<button type="submit"> <a href="Esalary.php?id=<?php echo $row['employee_number']; ?>">Edit</a></button>
-						<button type="submit"> <a href="Dsalary.php?id=<?php echo $row['employee_number']; ?>">Delete</a></button>
+			    		<button type="submit"> <a href="Esalary.php?id=<?php echo $row['salary_id']; ?>">Edit</a></button>
+						<button type="submit"> <a href="Dsalary.php?id=<?php echo $row['salary_id']; ?>">Delete</a></button>
 					</td>
 			</tbody>
 			<?php 

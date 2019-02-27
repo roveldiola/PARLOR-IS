@@ -37,9 +37,17 @@ include ('connector.php');
 	</table>
 	<br><br>
 		<div>
-			<button type="button"> <a href="Cjob.php">Add Job</a></button><br><br>
-			<button type="button"> <a href="Cemployee.php">Create Employee</a></button>
-			<button type="button"> <a href="Vemployee.php">View Employee</a></button>
+			<button type="submit"> <a href="Cjob.php">Add Job</a></button><br><br>
+		</div>
+		<h4>Employee</h4>
+		<div>
+			<button type="submit"> <a href="Cemployee.php">Create Employee</a></button>
+			<button type="submit"> <a href="Vemployee.php">View Employee</a></button>
+		</div>
+		<h4>Salary</h4>
+		<div>
+			<button type="submit"> <a href="Csalary.php">Create Salary</a></button>
+			<button type="submit"> <a href="Vsalary.php">View Salary</a></button>
 		</div>
 
 </body>

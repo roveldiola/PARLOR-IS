@@ -2,10 +2,11 @@
 include ('connector.php');
 
 	$id = $_GET['id'];
-	$query = "SELECT * FROM employee";
-	$result = mysqli_query($db, $query);
-	$sql = "SELECT * FROM salary WHERE employee_number = '$id'";
-	$result2 = mysqli_query($db, $sql);
+	$query = "SELECT * FROM employee, salary WHERE employee.employee_number = salary.employee_number AND salary.salary_id = '$id'";
+	$result2 = mysqli_query($db, $query);
+	$row2 = mysqli_fetch_array($result2);
+	/*$sql = "SELECT * FROM salary WHERE salary_id = '$id'";
+	$result2 = mysqli_query($db, $sql);*/
 
 ?>
 
@@ -18,34 +19,23 @@ include ('connector.php');
 </head>
 <body>
 <h1>Salary</h1>
+	<?php 
+		/*if(mysqli_num_rows($result2)) {
+			while($row2 = mysqli_fetch_array($result2)) {*/
+	?>
 	<form action = "Vsalary.php" method = "post">
-		<?php 
-			if(mysqli_num_rows($result2)) {
-				while($row1 = mysqli_fetch_array($result2)) {
+		<div>
+			<label>Employee Name: </label>
+			<input type="text" name="first_name" value="<?php echo $row2['first_name']; ?>" required>
+		</div>
+		<div>
+			<label>Salary: </label>
+			<input type="number" name="salary_emp" value="<?php echo $row2['salary_emp']; ?>" required>
+		</div>
+		<?php
+					/*}
+				}*/
 		?>
-		<div>
-		<label>Employee Name: </label>
-		<select name="employee_number">
-			<?php
-				if(mysqli_num_rows($result)){
-					while($row = mysqli_fetch_array($result)){
-			?>
-			<option value="<?php echo $row['employee_number'];?>" selected><?php echo $row['first_name'];?></option>
-			<?php
-					}
-				}
-			?>
-			
-		</select>
-		</div>
-		<div>
-			<label>Salary: </label><br>
-			<input type="text" name="salary_emp" value="<?php echo $row1['salary_emp']; ?>" required><br>
-		</div>
-		<div>
-			<label>Time Stamp: </label><br>
-			<input type="text" name="time_stamp" value="<?php echo $row1['time_stamp']; ?>" required><br>
-		</div>
 		<br>
 		<div>
 			<button type="submit" name="updateSal">Update</button>

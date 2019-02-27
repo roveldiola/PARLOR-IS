@@ -34,15 +34,11 @@ include ('connector.php');
 		</div>
 		<div>
 			<label>Salary: </label>
-			<input type="text" name="salary_emp" placeholder="Enter Salary" value="<?php echo $salary_emp; ?>" required><br>
-		</div>
-		<div>
-			<label>Time Stamp: </label>
-			<input type="time" name="time_stamp" placeholder="Enter Time Stamp" value="<?php echo $time_stamp; ?>" required><br>
+			<input type="number" name="salary_emp" placeholder="Enter Salary" value="<?php echo $salary_emp; ?>" required><br>
 		</div>
 		<br>
 		<div>
-			<button type="submit" name="saveJob">Save</button>
+			<button type="submit" name="saveSal">Save</button>
 			<button type="button"> <a href="Vsalary.php">View Salary</a></button>
 		</div>
 	</form>

@@ -24,37 +24,42 @@ include ('connector.php');
 				while($row1 = mysqli_fetch_array($result1)) {
 		?>
 		<div>
-			<label>Employee Number: </label><br>
-			<input type="number" name="employee_number" value="<?php echo $row1['employee_number']; ?>" required><br>
+			<label>Employee Number: </label>
+			<input type="number" name="employee_number" value="<?php echo $row1['employee_number']; ?>" required>
 		</div>
 		<div>
-			<label>First Name: </label><br>
-			<input type="text" name="first_name" value="<?php echo $row1['first_name']; ?>" required><br>
+			<label>First Name: </label>
+			<input type="text" name="first_name" value="<?php echo $row1['first_name']; ?>" required>
 		</div>
 		<div>
-			<label>Middle Initial: </label><br>
-			<input type="text" name="middle_initial" value="<?php echo $row1['middle_initial']; ?>" required><br>
+			<label>Middle Initial: </label>
+			<input type="text" name="middle_initial" value="<?php echo $row1['middle_initial']; ?>" required>
 		</div>
 		<div>
-			<label>Last Name: </label><br>
-			<input type="text" name="last_name" value="<?php echo $row1['last_name']; ?>" required><br>
+			<label>Last Name: </label>
+			<input type="text" name="last_name" value="<?php echo $row1['last_name']; ?>" required>
 		</div>
 		<div>
-			<label>Job Number: </label><br>
+			<label>Job Number: </label>
 			<select name="job_number">
+			<option selected>SELECT JOB</option>			
 			<?php
 			if(mysqli_num_rows($result)){
 				while($row = mysqli_fetch_array($result)){
-		?>
-		<option value="<?php echo $row['job_number'];?>" selected><?php echo $row['employee_job']; ?></option>
-		<?php
+			?>
+			
+			<option value="<?php echo $row['job_number']; ?>"><?php echo $row['employee_job']; ?></option>
+			<?php
 					}
 				}
-			}
-		}
 			?>
 			</select>
-		</div><br>
+		</div>
+		<?php
+				}
+			}
+		?>
+		<br>
 		<div>
 			<button type="submit" name="updateEmp">Update</button>
 			<button type="button"> <a href="Vemployee.php">Back<a/></button>
