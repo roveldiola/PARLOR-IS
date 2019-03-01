@@ -48,7 +48,7 @@ include ('connector.php');
 				while($row = mysqli_fetch_array($result)){
 			?>
 			
-			<option value="<?php echo $row['job_number']; ?>"><?php echo $row['employee_job']; ?></option>
+			<option value="<?php echo $row['job_number']; ?> "><?php echo $row['employee_job']; ?></option>
 			<?php
 					}
 				}
@@ -62,7 +62,7 @@ include ('connector.php');
 		<br>
 		<div>
 			<button type="submit" name="updateEmp">Update</button>
-			<button type="button"> <a href="Vemployee.php">Back<a/></button>
+			<button type="submit"> <a href="Vemployee.php">Back<a/></button>
 		</div>
 	</form>
 

@@ -16,7 +16,7 @@ include('connector.php');
 		<table>
 			<tbody>
 				<tr>
-					<th>Salary ID</th>
+					<th>Salary ID </th>
 					<th>Employee Name </th>
 					<th>Salary </th>
 					<th>Time Stamp </th>

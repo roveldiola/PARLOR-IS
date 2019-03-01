@@ -13,7 +13,6 @@ include ('connector.php');
 <body>
 <h1>Job</h1>
 <?php $result = mysqli_query($db, "SELECT * FROM job"); ?>
-
 	<table>
 		<thead>
 			<tr>
@@ -29,7 +28,7 @@ include ('connector.php');
 				<td><?php echo $row['employee_job']; ?></td>
 				<td>
 				    <button type="submit"> <a href="Ejob.php?id=<?php echo $row['job_number']; ?>">Edit</a></button>
-					<button type="button"> <a href="Djob.php?id=<?php echo $row['job_number']; ?>">Delete</a></button>
+					<button type="submit"> <a href="Djob.php?id=<?php echo $row['job_number']; ?>">Delete</a></button>
 				</td>
 			</tr>
 			<?php } ?>

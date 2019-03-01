@@ -11,8 +11,8 @@ include('connector.php');
 	<title>Parlor IS</title>
 </head>
 <body>
+<h1>Employee</h1>
 	<div>
-		<h1>Employee</h1>
 		<table>
 			<tbody>
 				<tr>
@@ -43,8 +43,7 @@ include('connector.php');
 				}
 			?>
 		</table>
-	</div>
-	<br><br>
+	</div><br><br>
 		<div>
 			<button type="submit"> <a href="Cemployee.php">Add Employee</a></button><br><br>
 		</div>

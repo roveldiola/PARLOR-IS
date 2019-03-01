@@ -45,7 +45,7 @@ include('connector.php');
 			</select>
 		</div><br>
 		<button type="submit" name="saveEmp">Save</button>
-		<button type="button"> <a href="Vemployee.php">View Employee</a></button><br><br>
+		<button type="submit"> <a href="Vemployee.php">View Employee</a></button>
 	</form>
 </body>
 </html>

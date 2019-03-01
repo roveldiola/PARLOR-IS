@@ -17,21 +17,21 @@
 <body>
 <h1>Job</h1>
 	<form action="Vjob.php" method="post">
-	<div>
-		<label>Job Number: </label><br>
-		<input type="number" name="job_number" value="<?php echo $row['job_number']; ?>" required><br>
-	</div>
-	<div>
-		<label>Employee Job: </label><br>
-		<input type="text" name="employee_job" value="<?php echo $row['employee_job']; ?>" required><br>
-	</div>
-	<?php 
+		<div>
+			<label>Job Number: </label>
+			<input type="number" name="job_number" value="<?php echo $row['job_number']; ?>" required>
+		</div>
+		<div>
+			<label>Employee Job: </label>
+			<input type="text" name="employee_job" value="<?php echo $row['employee_job']; ?>" required>
+		</div>
+		<?php 
+				}
 			}
-		}
-	?>
-	<br>
-	<button type="submit" name="updateJob">Update</button>
-	<button type="button"> <a href="Vjob.php">Back<a/></button>
+		?>
+		<br>
+		<button type="submit" name="updateJob">Update</button>
+		<button type="submit"> <a href="Vjob.php">Back<a/></button>
 	</form>
 	
 

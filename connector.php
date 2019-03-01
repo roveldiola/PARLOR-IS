@@ -67,10 +67,7 @@ $job_number = "";
     $sql = "UPDATE employee SET employee_number='$employee_number', first_name='$first_name', middle_initial='$middle_initial', last_name='$last_name', job_number='$job_number'
       WHERE employee_number='$employee_number'";
     mysqli_query($db, $sql);
-    $result = mysqli_query($db, $sql);
-    if($result == true) {
-      header('location: Vemployee.php');
-    }
+    header('location: Vemployee.php');
   }
 
 
@@ -100,7 +97,7 @@ $time_stamp = "";
     $salary_emp = mysqli_real_escape_string($db, $_POST['salary_emp']);
     $time_stamp = mysqli_real_escape_string($db, $_POST['time_stamp']);
 
-    $sql = "UPDATE salary SET  salary_emp='$salary_emp'
+    $sql = "UPDATE salary SET salary_id='$salary_id', employee_number='$employee_number', salary_emp='$salary_emp', time_stamp='$time_stamp'
       WHERE salary_id='$salary_id'";
     mysqli_query($db, $sql);
     header('location: Vsalary.php');

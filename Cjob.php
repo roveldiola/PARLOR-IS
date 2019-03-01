@@ -14,19 +14,11 @@ include ('connector.php');
 <h1>Job</h1>
 	<form action = "Vjob.php" method = "post">
 		<div>
-			<label></label>
-		</div>
-		<div>
 			<label>Employee Job: </label>
 			<input type="text" name="employee_job" placeholder="Enter Job" value="<?php echo $employee_job; ?>" required><br>
-		</div>
-		<br>
-		<div>
+		</div><br>
 			<button type="submit" name="saveJob">Save</button>
-			<button type="button"> <a href="Vjob.php">View Job</a></button><br><br>
-			<button type="button"> <a href="Cemployee.php">Create Employee</a></button>
-			<button type="button"> <a href="Vemployee.php">View Employee</a></button>
-		</div>
+			<button type="submit"> <a href="Vjob.php">View Job</a></button>
 	</form>
 
 </body>
