@@ -1,4 +1,4 @@
-<?php include('connector.php');
+<?php include('../connector/connector.php');
 
 	$id 	= $_GET['id'];
 	$query 	= "DELETE FROM employee WHERE employee_number = '$id'";

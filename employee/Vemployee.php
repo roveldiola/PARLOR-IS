@@ -1,18 +1,17 @@
-<?php 
-include('connector.php');
+<?php include('../connector/connector.php');
 	
 	$query = "SELECT * FROM employee, job WHERE employee.job_number = job.job_number";
 	$result	= mysqli_query($db, $query);
-	
 ?>
+
 <!DOCTYPE html>
 <html>
 <head>
 	<title>Parlor IS</title>
 </head>
 <body>
+<?php include('employee.php'); ?>
 <h1>Employee</h1>
-	<div>
 		<table>
 			<tbody>
 				<tr>
@@ -43,20 +42,11 @@ include('connector.php');
 				}
 			?>
 		</table>
-	</div><br><br>
+	
+		<br><br>
 		<div>
-			<button type="submit"> <a href="Cemployee.php">Add Employee</a></button><br><br>
+			<button type="submit"><a href="Cemployee.php">Add</a></button>
+			<button type="submit"><a href="../index.php">Home</a></button>
 		</div>
-		<h4>Job</h4>
-		<div>
-			<button type="submit"> <a href="Cjob.php">Create Job</a></button>
-			<button type="submit"> <a href="Vjob.php">View Job</a></button>
-		</div>
-		<h4>Salary</h4>
-		<div>
-			<button type="submit"> <a href="Csalary.php">Create Salary</a></button>
-			<button type="submit"> <a href="Vsalary.php">View Salary</a></button>
-		</div>
-
 </body>
 </html>
