@@ -31,7 +31,7 @@
 						
 							<a class="nav-link" href="../tools/VtoolsEmp.php">Tools Employee</a>
 						
-							<a class="nav-link  navbar-brand mb-0 h1 active" href="../services/Vser.php">Services</a>
+							<a class="nav-link navbar-brand mb-0 h1 active" href="../services/Vser.php">Services</a>
 						
 							<a class="nav-link" href="../services/CserAv.php">Services Transaction</a>
 						
@@ -47,33 +47,31 @@
 <center>
 <h1>Services</h1>
 <?php $result = mysqli_query($db, "SELECT * FROM services"); ?>
-	<table>
-		<thead>
-			<tr>
-				<th>Services Code</th>
-				<th>Description</th>
-				<th>Amount</th>
-				<th>Action</th>
-			</tr>
-		</thead>
-			<?php while ($row = mysqli_fetch_array($result)){ ?>
-		<tbody>
-			<tr>
-				<td><?php echo $row['services_code']; ?></td>
-				<td><?php echo $row['description']; ?></td>
-				<td><?php echo $row['amount']; ?></td>
-				<td>
-				    <button type="submit"> <a href="Eser.php?id=<?php echo $row['services_code']; ?>">Edit</a></button>
-					<button type="submit"> <a href="Dser.php?id=<?php echo $row['services_code']; ?>">Delete</a></button>
-				</td>
-			</tr>
-			<?php } ?>
-		</tbody>
-	</table>
-	<br><br>
-	<div>
-		<button type="submit"><a href="Cser.php">Add</a></button>
-		<button type="submit"><a href="../index.php">Home</a></button>
+	<div class="container">
+		<a href="Cser.php"><span style="float: right; font-size: 50px; margin-right: 20px;"><i class="fa fa-plus-circle" font-size="50px"></i></span></a>
+			<table class="table table-bordered">
+				<thead class="thead-light">
+					<tr>
+						<th>Services Code</th>
+						<th>Description</th>
+						<th>Amount</th>
+						<th>Action</th>
+					</tr>
+				</thead>
+				<?php while ($row = mysqli_fetch_array($result)){ ?>
+				<tbody>
+					<tr>
+						<td><?php echo $row['services_code']; ?></td>
+						<td><?php echo $row['description']; ?></td>
+						<td><?php echo $row['amount']; ?></td>
+						<td>
+						    <a class="btn btn-outline-primary btn-sm" href="Eser.php?id=<?php echo $row['services_code']; ?>">Edit</a>
+							<a class="btn btn-outline-danger btn-sm" href="Dser.php?id=<?php echo $row['services_code']; ?>">Delete</a>
+						</td>
+					</tr>
+					<?php } ?>
+				</tbody>
+			</table>
 	</div>
 </center>
 </body>

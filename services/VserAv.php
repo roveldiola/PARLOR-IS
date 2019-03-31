@@ -1,9 +1,8 @@
 <?php include('../connector/connector.php'); 
 
-	$sql = "SELECT * FROM services_items WHERE receipt_no = receipt_no";
+	$sql = "SELECT * FROM services, services_items WHERE services.services_code = services_items.services_code";
 	$result = mysqli_query($db, $sql);
-	/*$query = "SELECT * FROM customer, services_availed WHERE customer.customer_id = services_availed.customer_id";
-	$result	= mysqli_query($db, $query);*/
+
 ?>
 
 <!DOCTYPE html>
@@ -43,20 +42,23 @@
 						
 							<a class="nav-link" href="../unit/Cunit.php">Unit</a>
 						
-				
 					</ul>
 				</div>
 			</nav>
 		</div>
 	</header><br>
+<center>
 <h1>Services Transaction</h1>
 <br>
 	<h2>Services Items</h2>
-	<table>
-		<thead>
+	<div class="container">
+		<a href="CserAv.php"><span style="float: right; font-size: 50px; margin-right: 20px;"><i class="fa fa-plus-circle" font-size="50px"></i></span></a>
+			<table class="table table-bordered">
+				<thead class="thead-light">
 			<tr>
 				<th>Receipt No.</th>
 				<th>Services Code</th>
+				<th>Amount</th>
 				<th>Action</th>
 			</tr>
 		</thead>
@@ -68,9 +70,10 @@
 			<tr>
 				<td><?php echo $row['receipt_no']; ?></td>
 				<td><?php echo $row['services_code']; ?></td>
+				<td><?php echo $row['amount']; ?></td>
 				<td>
-				    <button type="submit"><a href="EserAv.php?id=<?php echo $row['receipt_no']; ?>">Edit</a></button>
-					<button type="submit"><a href="DserAv.php?id=<?php echo $row['receipt_no']; ?>">Delete</a></button>
+				    <a class="btn btn-outline-primary btn-sm" href="EserAv.php?id=<?php echo $row['receipt_no']; ?>">Edit</a>
+					<a class="btn btn-outline-danger btn-sm" href="DserAv.php?id=<?php echo $row['receipt_no']; ?>">Delete</a>
 				</td>
 			</tr>
 			<?php 
@@ -79,10 +82,6 @@
 			?>
 		</tbody>
 	</table>
-		<br><br>
-		<div>
-			<button type="submit"> <a href="CserAv.php">Add</a></button>
-			<button type="submit"> <a href="../index.php">Home</a></button>
-		</div>
+</center>
 </body>
 </html>

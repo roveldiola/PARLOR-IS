@@ -8,30 +8,38 @@
 ?>
 
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 	<title>Parlor IS</title>
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" href="../font-awesome-4.7.0/font-awesome-4.7.0/css/font-awesome.min.css">
 </head>
 <body>
 <?php include('services.php'); ?>
+<center>
 <h1>Servics</h1>
-	<form action="Vser.php" method="post">
-		<div>
+	<form class="container" action="Vser.php" method="post">
+		<div class="form-group">
 			<label>Servics Code: </label>
-				<input type="number" name="services_code" value="<?php echo $row['services_code']; ?>" readonly><br>
+				<input type="number" name="services_code" value="<?php echo $row['services_code']; ?>" readonly>
+		</div>
+		<div class="form-group">
 			<label>Description: </label>
-				<input type="text" name="description" value="<?php echo $row['description']; ?>" required ><br>
+				<input type="text" name="description" value="<?php echo $row['description']; ?>" required>
+		</div>
+		<div class="form-group">
 			<label>Amount: </label>
-				<input type="text" name="amount" value="<?php echo $row['amount']; ?>" required><br>
+				<input type="text" name="amount" value="<?php echo $row['amount']; ?>" required>
 			<?php 
 					}
 				}
 			?>
-		</div><br>
-		<div>
-			<button type="submit" name="update">Update</button>
-			<button type="submit"><a href="Vser.php">Back<a/></button>
 		</div>
+		<button type="submit" class="btn btn-outline-primary" name="update">Update</button>
+		<a class="btn btn-outline-primary" href="Vser.php">Back<a/>
 	</form>
+</center>
 </body>
 </html>

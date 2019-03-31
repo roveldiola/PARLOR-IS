@@ -54,7 +54,7 @@
 			<label>Zip Code: </label>
 				<input type="number" name="zip_code" placeholder="Enter Number" value="<?php echo $zip_code; ?>" required>
 		</div>
-		<button type="button" class="btn btn-outline-primary" name="saveCus">Save</button>
+		<button type="submit" class="btn btn-outline-primary" name="saveCus">Save</button>
 		<a class="btn btn-outline-primary" href="Vcustomer.php">View</a></button>
 	</form>
 </center>

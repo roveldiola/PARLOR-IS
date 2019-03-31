@@ -7,16 +7,21 @@
 ?>
 
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 	<title>Parlor IS</title>
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" href="../font-awesome-4.7.0/font-awesome-4.7.0/css/font-awesome.min.css">
 </head>
 <body>
 <?php include('toolsEmp.php'); ?>
+<center>
 <h1>Tools Employee</h1>
-	<form action = "VtoolsEmp.php" method = "post">
-		<div>
-				<input type="hidden" name="id" value="<?php echo $id; ?>">
+	<form class="container" action = "VtoolsEmp.php" method = "post">
+		<div class="form-group">
+				<input type="number" name="id" value="<?php echo $id; ?>" hidden>
 			<label>Employee Name: </label>
 				<select name="employee_number">
 				<option> </option>
@@ -29,7 +34,9 @@
 						}
 					}
 				?>
-				</select><br>
+				</select>
+		</div>
+		<div class="form-group">
 			<label>ID No.: </label>
 				<select name="id_item">
 				<option> </option>
@@ -42,17 +49,17 @@
 						}
 					}
 				?>
-				</select><br>
-			<label>Quantity: </label>
-				<input type="number" name="quantity" value="<?php echo $quantity; ?>" placeholder="Enter Quantity" required><br>
-				<input type="hidden" name="time_stamp" value="<?php echo $time_stamp; ?>" >
-
-		</div><br>
-		<div>
-			<button type="submit" name="saveToolsEmp">Save</button>
-			<button type="submit"><a href="VtoolsEmp.php">View</a></button>
+				</select>
 		</div>
+		<div class="form-group">
+			<label>Quantity: </label>
+				<input type="number" name="quantity" value="<?php echo $quantity; ?>" placeholder="Enter Quantity" required>
+				<input type="hidden" name="time_stamp" value="<?php echo $time_stamp; ?>" required>
+		</div>
+			<button type="submit" class="btn btn-outline-primary" name="saveToolsEmp">Save</button>
+			<a class="btn btn-outline-primary" href="VtoolsEmp.php">View</a>
 	</form>
+</center>
 </body>
 </html>
 

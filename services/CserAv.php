@@ -1,5 +1,8 @@
 <?php include('../connector/connector.php'); 
 
+	$Customer = "SELECT * FROM customer";
+	$result1 = mysqli_query($db, $Customer);
+
 	if (isset($_POST['saveAv'])) {
 		$receipt_no = mysqli_real_escape_string($db, $_POST['receipt_no']);
 		$customer_id = mysqli_real_escape_string($db, $_POST['customer_id']);
@@ -33,28 +36,39 @@
 ?>
 
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 	<title>Parlor IS</title>
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" href="../font-awesome-4.7.0/font-awesome-4.7.0/css/font-awesome.min.css">
 </head>
 <body>
 <center>
 <h1>Services Transaction</h1> 
 <br>
 	<h2>Services Availed</h2>
-		<form action="CserAv.php" method="post">
-			<div>
+		<form class="container" action="VserAv.php" method="post">
+			<div class="form-group">
 				<label>Receipt No.: </label>
 					<input type="text" name="receipt_no" value="<?php echo strtoupper(uniqid()) ?>" readonly required/>
 			</div>
-			<div>
+			<div class="form-group">
 				<label>Customer ID: </label>
-				<input type="number" name="customer_id" required/>
+				<select name="customer_id">
+				<option> </option>
+				<?php
+					if(mysqli_num_rows($result1)){
+						while($row1 = mysqli_fetch_array($result1)){
+				?>
+				<option value="<?php echo $row1['customer_id']; ?>"><?php echo $row1['first_name']; ?></option>
+				<?php
+						}
+					}
+				?>
+				</select>
 			</div>
-			<!-- <div>
-				<label>Amount: </label>
-				<input type="number" name="amount" required/>
-			</div> -->
 
 		<br>
 		<h2>Services Items</h2>
@@ -75,8 +89,8 @@
 		</table>
 
 		<br>
-		<button type="submit" name="saveAv">Save</button>
-		<button type="button"><a href="VserAv.php">View</a></button>
+		<button type="submit" class="btn btn-outline-primary" name="saveAv">Save</button>
+		<a class="btn btn-outline-primary" href="VserAv.php">View</a>
 	</form>
 </center>
 </body>

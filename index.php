@@ -15,13 +15,28 @@
 			  </button>
 		</nav>
 	</div><br>
-	<div class="container">
-		<p><h4>Beauty Parlor or Beauty Salon, or sometimes Beauty Shop is a distinction between a beauty salon and a hair salon. It provide extended services related to skin health, facial aesthetics, foot care, and nail manicures.</h4></p>
-	</div><br>
-		<div>
+	</div class="container"  style="height:50%px; width:50%px;">
+	<table class="table table-bordered">
+		<thead lass="thead-light"  style="background-color:#B0E0E6;">
+		<tr>
+			<td>
+			<div class="row">
+				<div class="col-sm"> </div>
+					<div class="col-sm">
+						<p><h4>Beauty Parlor or Beauty Salon, or sometimes Beauty Shop is a distinction between a beauty salon and a hair salon. It provide extended services related to skin health, facial aesthetics, foot care, and nail manicures.</h4></p>
+					</div>
+				<div class="col-sm"> </div>
+			</div>
+			</td>
+		</tr>
+		</thead>
+	</table>
+	</div>
+	<br><br>
+	<div>
 			<ul class="nav justify-content-center">
 				<li class="nav-item">
-					<a class="btn btn-outline-primary btn-lg" href="./job/Vjob.php" role="button">Get Started</a>
+					<a class="btn btn-primary btn-lg" href="./job/Vjob.php" role="button" style="color:white;">Get Started</a>
 				</li>
 			</ul>
 		</div> 
