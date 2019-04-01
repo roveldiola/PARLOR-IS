@@ -46,7 +46,7 @@
 				}
 			?>
 		</div>
-			<button type="button" class="btn btn-outline-primary" name="updateToolsItem">Update</button>
+			<button type="submit" class="btn btn-outline-primary" name="updateToolsItem">Update</button>
 			<a class="btn btn-outline-primary" href="VtoolsItem.php">Back<a/></button>
 	</form>
 </center>

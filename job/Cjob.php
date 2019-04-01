@@ -19,7 +19,7 @@
 				<label>Employee Job: </label>
 				<input type="text" name="employee_job" placeholder="Enter Job" value="<?php echo $employee_job; ?>" required>
 			</div>
-				<button type="button" class="btn btn-outline-primary" name="saveJob">Save</button>
+				<button type="submit" class="btn btn-outline-primary" name="saveJob">Save</button>
 				<a class="btn btn-outline-primary" href="Vjob.php">View</a>
 		</form>
 </center>

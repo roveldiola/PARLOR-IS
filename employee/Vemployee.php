@@ -37,10 +37,7 @@
 						
 							<a class="nav-link" href="../services/Vser.php">Services</a>
 						
-							<a class="nav-link" href="../services/CserAv.php">Services Transaction</a>
-						
-							<a class="nav-link" href="../unit/Cunit.php">Unit</a>
-						
+							<a class="nav-link" href="../services/VserAv.php">Services Transaction</a>
 				
 					</ul>
 				</div>

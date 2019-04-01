@@ -33,7 +33,7 @@
 				}
 			}
 		?>
-		<button type="button" class="btn btn-outline-primary" name="updateJob">Update</button>
+		<button type="submit" class="btn btn-outline-primary" name="updateJob">Update</button>
 		<a class="btn btn-outline-primary" href="Vjob.php">Back<a/></button>
 	</form>
 </center>

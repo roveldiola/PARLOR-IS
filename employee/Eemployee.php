@@ -60,7 +60,7 @@
 				}
 			}
 		?>
-			<button type="button" class="btn btn-outline-primary" name="updateEmp">Update</button>
+			<button type="submit" class="btn btn-outline-primary" name="updateEmp">Update</button>
 			<a class="btn btn-outline-primary" href="Vemployee.php">Back<a/>
 	</form>
 </center>

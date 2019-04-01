@@ -39,7 +39,7 @@
 				<input type="number" name="salary_emp" placeholder="Enter Salary" value="<?php echo $salary_emp; ?>" required>
 				<input type="hidden" name="time_stamp" value="<?php echo $time_stamp; ?>" >
 		</div>
-			<button type="button" class="btn btn-outline-primary" name="saveSal">Save</button>
+			<button type="submit" class="btn btn-outline-primary" name="saveSal">Save</button>
 			<a class="btn btn-outline-primary" href="Vsalary.php">View</a></button>
 	</form>
 </center>	

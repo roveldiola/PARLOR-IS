@@ -49,7 +49,7 @@
 				?>
 				</select>
 		</div>
-		<button type="button" class="btn btn-outline-primary" name="saveEmp">Save</button>
+		<button type="submit" class="btn btn-outline-primary" name="saveEmp">Save</button>
 		<a class="btn btn-outline-primary" href="Vemployee.php">View</a>
 	</form>
 </center>

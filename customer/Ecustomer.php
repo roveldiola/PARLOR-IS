@@ -62,7 +62,7 @@
 				}
 			}
 		?>
-			<button type="button" class="btn btn-outline-primary" name="updateCus">Update</button>
+			<button type="submit" class="btn btn-outline-primary" name="updateCus">Update</button>
 			<a class="btn btn-outline-primary" href="Vcustomer.php">Back<a/></button>
 	</form>
 </center>

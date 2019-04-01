@@ -35,7 +35,7 @@
 			<label>Unit: </label>
 				<input type="text" name="unit" value="<?php echo $unit; ?>" placeholder="Enter Unit" required>
 		</div>
-			<button type="button" class="btn btn-outline-primary" name="saveToolsItems">Save</button>
+			<button type="submit" class="btn btn-outline-primary" name="saveToolsItems">Save</button>
 			<a class="btn btn-outline-primary" href="VtoolsItem.php">View</a>
 	</form>
 </center>

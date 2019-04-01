@@ -30,7 +30,7 @@
 				<input type="number" name="salary_emp" value="<?php echo $row2['salary_emp']; ?>" required>
 				<input type="hidden" name="time_stamp" value="<?php echo $row2['time_stamp']; ?>" >
 		</div>
-		<button type="button" class="btn btn-outline-primary" name="updateSal">Update</button>
+		<button type="submit" class="btn btn-outline-primary" name="updateSal">Update</button>
 		<a class="btn btn-outline-primary" href="Vsalary.php">Back<a/></button>
 	</form>
 </center>
