@@ -57,7 +57,6 @@
 				<th>Receipt No.</th>
 				<th>Services Code</th>
 				<th>Amount</th>
-				<th>Action</th>
 			</tr>
 		</thead>
 			<?php 
@@ -69,10 +68,6 @@
 				<td><?php echo $row['receipt_no']; ?></td>
 				<td><?php echo $row['services_code']; ?></td>
 				<td><?php echo $row['amount']; ?></td>
-				<td>
-				    <a class="btn btn-outline-primary btn-sm" href="EserAv.php?id=<?php echo $row['receipt_no']; ?>">Edit</a>
-					<a class="btn btn-outline-danger btn-sm" href="DserAv.php?id=<?php echo $row['receipt_no']; ?>">Delete</a>
-				</td>
 			</tr>
 			<?php 
 				} 
