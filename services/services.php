@@ -14,7 +14,7 @@ $amount = "";
 		$sql = "INSERT INTO services (services_code, description, amount) 
 			VALUES ('$services_code', '$description', '$amount')";
 		mysqli_query($db, $sql);
-    header('location: Vser.php');
+    	header('location: Vser.php');
 	}
 
 	// update data from Table 'services'

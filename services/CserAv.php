@@ -11,7 +11,7 @@
 		$Receipt = '';
 		$servicess = $_POST['Services'];
 
-		$Customer="INSERT INTO services_availed (receipt_no, customer_id) VALUES ('$receipt_no', $customer_id);";
+		$Customer="INSERT INTO services_availed (receipt_no, customer_id) VALUES ('$receipt_no', '$customer_id');";
 		mysqli_query($db, $Customer);
 
 		for($i = 0; $i < count($_POST['Services']); $i++){
@@ -49,7 +49,7 @@
 <h1>Services Transaction</h1> 
 <br>
 	<h2>Services Availed</h2>
-		<form class="container" action="VserAv.php" method="post">
+		<form class="container" action="CserAv.php" method="post">
 			<div class="form-group">
 				<label>Receipt No.: </label>
 					<input type="text" name="receipt_no" value="<?php echo strtoupper(uniqid()) ?>" readonly required/>
